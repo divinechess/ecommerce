@@ -39,6 +39,7 @@ route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.lo
 
 route::get('/admin/profile', [AdminProfileController::class, 'AdminProfile'])->name('admin.profile');
 route::get('/admin/profile/edit', [AdminProfileController::class, 'AdminProfileEdit'])->name('admin.profile.edit');
+route::get('/admin/change/password', [AdminProfileController::class, 'AdminChangePassword'])->name('admin.change.password');
 route::post('/admin/profile/store', [AdminProfileController::class, 'AdminProfileStore'])->name('admin.profile.store');
-
+route::post('/update/change/password', [AdminProfileController::class, 'UpdateChangePassword'])->name('update.change.password');
 
