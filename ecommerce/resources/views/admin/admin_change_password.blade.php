@@ -41,6 +41,9 @@
                                                     <div class="controls">
                                                             <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" required="" >
                                                     </div>
+                                                @error('password')
+                                                <span class="text-danger"> {{$message}}</span>  {{--Check if passwords match --}}
+                                                @enderror
                                             </div>
                                         </div> {{--end col md 6 --}}
 
