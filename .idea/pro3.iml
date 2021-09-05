@@ -125,6 +125,7 @@
       <excludeFolder url="file://$MODULE_DIR$/ecommerce/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/ecommerce/vendor/mobiledetect/mobiledetectlib" />
       <excludeFolder url="file://$MODULE_DIR$/ecommerce/vendor/jaybizzle/crawler-detect" />
+      <excludeFolder url="file://$MODULE_DIR$/ecommerce/vendor/intervention/image" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

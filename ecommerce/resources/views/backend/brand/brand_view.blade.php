@@ -10,12 +10,6 @@
             <section class="content">
                 <div class="row">
 
-
-
-
-
-
-
                     <div class="col-8">
 
                         <div class="box">
@@ -39,7 +33,7 @@
                                         <tr>
                                             <td>{{ $item->brand_name_en  }}</td>
                                             <td>{{ $item->brand_name_hin }}</td>
-                                            <td><img src="{{ asset('brand_image') }}" style="width: 70px; height:40px "></td>
+                                            <td><img src="{{ asset($item->brand_image) }}" style="width: 70px; height:40px "></td>
                                             <td>
                                                 <a href="" class="btn btn btn-info">Edit</a>
                                                 <a href="" class="btn btn btn-danger">Delete</a>
@@ -80,29 +74,36 @@
                                                             <h5>Brand Name English<span class="text-danger">*</span></h5>
                                                             <div class="controls">
                                                                 <input type="text" name="brand_name_en" class="form-control">
+                                                                @error('brand_name_en')
+                                                                <span class="text-danger"> {{ $message }}</span>
+                                                                @enderror
                                                             </div>
 
                                                             <div class="form-group">
                                                                 <h5>Brand Name Hindi<span class="text-danger">*</span></h5>
                                                                 <div class="controls">
                                                                     <input type="text" name="brand_name_hin" class="form-control">
+                                                                    @error('brand_name_hin')
+                                                                    <span class="text-danger"> {{ $message }}</span>
+                                                                    @enderror
                                                                 </div>
 
                                                                 <div class="form-group">
                                                                     <h5>Brand Image<span class="text-danger">*</span></h5>
                                                                     <div class="controls">
-                                                                        <input type="file"  name="brand_image" class="form-control" required="" >
+                                                                        <input type="file"  name="brand_image" class="form-control">
+                                                                        @error('brand_image')
+                                                                        <span class="text-danger"> {{ $message }}</span>
+                                                                        @enderror
                                                                     </div>
-                                                                    @error('password')
-                                                                    <span class="text-danger"> {{$message}}</span>  {{--Check if passwords match --}}
-                                                                    @enderror
+
                                                                 </div>
 
 
 
 
                                                         <div class="text-xs-right">
-                                                            <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update">
+                                                            <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add New">
                                                         </div>
                                     </form>
 

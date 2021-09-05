@@ -119,6 +119,7 @@
       <path value="$PROJECT_DIR$/ecommerce/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/ecommerce/vendor/mobiledetect/mobiledetectlib" />
       <path value="$PROJECT_DIR$/ecommerce/vendor/jaybizzle/crawler-detect" />
+      <path value="$PROJECT_DIR$/ecommerce/vendor/intervention/image" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />
