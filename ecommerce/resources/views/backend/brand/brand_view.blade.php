@@ -35,8 +35,8 @@
                                             <td>{{ $item->brand_name_hin }}</td>
                                             <td><img src="{{ asset($item->brand_image) }}" style="width: 70px; height:40px "></td>
                                             <td>
-                                                <a href="" class="btn btn btn-info">Edit</a>
-                                                <a href="" class="btn btn btn-danger">Delete</a>
+                                                <a href="{{ route('brand.edit',$item->id) }}" class="btn btn btn-info">Edit</a> {{-- send an ID --}}
+                                                <a href="{{ route('brand.delete',$item->id) }}" class="btn btn btn-danger" id="delete">Delete</a>
                                             </td>
 
                                         </tr>

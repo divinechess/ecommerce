@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Backend\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,6 +62,19 @@ route::post('/user/profile/store', [IndexController::class, 'UserProfileStore'])
 route::prefix('brand')->group(function(){
     route::get('/view', [BrandController::class, 'BrandView'])->name('all.brand');
     route::post('/store', [BrandController::class, 'BrandStore'])->name('brand.store');
+    route::get('/edit/{id}', [BrandController::class, 'BrandEdit'])->name('brand.edit'); //pick up id from brand_view
+    route::post('/update', [BrandController::class, 'BrandUpdate'])->name('brand.update');
+    route::get('/delete/{id}', [BrandController::class, 'BrandDelete'])->name('brand.delete');
+
+});
+
+// Admin Category All Routes
+route::prefix('category')->group(function(){
+    route::get('/view', [CategoryController::class, 'CategoryView'])->name('view.category');
+    route::post('/store', [CategoryController::class, 'CategoryStore'])->name('category.store');
+    route::get('/edit/{id}', [BrandController::class, 'BrandEdit'])->name('brand.edit'); //pick up id from brand_view
+    route::post('/update', [BrandController::class, 'BrandUpdate'])->name('brand.update');
+    route::get('/delete/{id}', [BrandController::class, 'BrandDelete'])->name('brand.delete');
 
 });
 
