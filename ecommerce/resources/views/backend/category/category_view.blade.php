@@ -36,9 +36,9 @@
                                             <td><span><i class="{{ $item->category_icon  }}"></i></span></td>
                                             <td>{{ $item->category_name_en }}</td>
                                             <td>{{ $item->category_name_hin }}</td>
-
-                                                <a href="{{ route('brand.edit',$item->id) }}" class="btn btn btn-info">Edit</a> {{-- send an ID --}}
-                                                <a href="{{ route('brand.delete',$item->id) }}" class="btn btn btn-danger" id="delete">Delete</a>
+                                            <td>
+                                                <a href="{{ route('category.edit',$item->id) }}" class="btn btn btn-info"><i class="fas fa-pen" title="Edit Data"></i></a> {{-- send an ID --}}
+                                                <a href="{{ route('category.delete',$item->id) }}" class="btn btn btn-danger" id="delete"><i class="fas fa-trash-alt" title="Delete Data" ></i> </a>
                                             </td>
 
                                         </tr>
@@ -70,7 +70,7 @@
                                     <div class="form-group">
                                         <h5>Category English<span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <input type="text" name="category_name_hin" class="form-control">
+                                            <input type="text" name="category_name_en" class="form-control">
                                             @error('category_name_en')
                                             <span class="text-danger"> {{ $message }}</span>
                                             @enderror

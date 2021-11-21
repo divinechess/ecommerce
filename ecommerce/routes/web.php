@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\SubCategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,9 +73,21 @@ route::prefix('brand')->group(function(){
 route::prefix('category')->group(function(){
     route::get('/view', [CategoryController::class, 'CategoryView'])->name('view.category');
     route::post('/store', [CategoryController::class, 'CategoryStore'])->name('category.store');
-    route::get('/edit/{id}', [BrandController::class, 'BrandEdit'])->name('brand.edit'); //pick up id from brand_view
-    route::post('/update', [BrandController::class, 'BrandUpdate'])->name('brand.update');
-    route::get('/delete/{id}', [BrandController::class, 'BrandDelete'])->name('brand.delete');
+    route::get('/edit/{id}', [CategoryController::class, 'CategoryEdit'])->name('category.edit'); //pick up id from Category_view
+    route::post('/update', [CategoryController::class, 'CategoryUpdate'])->name('category.update');
+    route::get('/delete/{id}', [CategoryController::class, 'CategoryDelete'])->name('category.delete');
 
 });
+
+// Admin Sub Category All Routes
+
+    route::get('sub/view', [SubCategoryController::class, 'SubCategoryView'])->name('view.subcategory');
+    route::post('/sub/store', [SubCategoryController::class, 'SubCategoryStore'])->name('subcategory.store');
+    route::get('/sub/edit/{id}', [SubCategoryController::class, 'SubCategoryEdit'])->name('subcategory.edit'); //pick up id from SubCategory_view
+    route::post('/sub/update/', [SubCategoryController::class, 'SubCategoryUpdate'])->name('subcategory.update');
+    route::get('/sub/delete/{id}', [SubCategoryController::class, 'SubCategoryDelete'])->name('subcategory.delete');
+
+
+
+
 
